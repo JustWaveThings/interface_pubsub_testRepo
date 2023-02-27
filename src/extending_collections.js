@@ -1,13 +1,8 @@
 /* eslint-disable no-prototype-builtins */
 /* eslint-disable no-underscore-dangle */
-import v4 from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
-const createUUID = v4();
-
-const Collection = (
-	title = 'Default Collection',
-	_id = createUUID()
-) => {
+const Collection = (title = 'Default Collection', _id = uuidv4()) => {
 	let stuff = [];
 	const observers = {};
 
@@ -49,6 +44,11 @@ const Collection = (
 		);
 	};
 
+	const logInUpperCase = (item) =>
+		console.log(
+			`**${item.term.toUpperCase()}**: ${item.definition}*`
+		);
+
 	return {
 		get _id() {
 			return _id;
@@ -63,6 +63,7 @@ const Collection = (
 		update,
 		subscribe,
 		unsubscribe,
+		logInUpperCase,
 	};
 };
 
