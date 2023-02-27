@@ -13,6 +13,7 @@ const Collection = (title = 'Default Collection', _id = uuidv4()) => {
 			// pass as arguments - wrapped item, collection as pure data
 			observerFunc(thing, { _id, title, collection: [...stuff] })
 		);
+		console.log(thing);
 		return thing;
 	};
 
@@ -21,6 +22,7 @@ const Collection = (title = 'Default Collection', _id = uuidv4()) => {
 			observers[action] = [];
 		}
 		observers[action].push(observerFunction);
+		console.log('holy cow you subscribed');
 	};
 
 	return {

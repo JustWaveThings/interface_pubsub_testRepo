@@ -28,9 +28,16 @@ tobyDictionary.add({
 	definition: 'adj. Unable to leave.',
 }); */
 
-const test = Collection('Test');
+const test = Collection();
 
-console.log(test.add({ test: 'test' }));
+test.add({ test: 'test', animal: 'cougar' });
 
-console.log(test.stuff);
-console.log(tobyDictionary);
+test.subscribe('add', (item, collection) => {
+	console.log('item', item, 'collection', collection);
+});
+
+console.log(test.stuff); // undefined
+console.log(test.thing); // undefined
+console.log(test.title); // Default Collection
+
+console.log(test.observers); // undefined
