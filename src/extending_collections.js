@@ -22,10 +22,18 @@ const Collection = (title = 'Default Collection', _id = uuidv4()) => {
 			observers[action] = [];
 		}
 		observers[action].push(observerFunction);
-		console.log('holy cow you subscribed');
+		console.log(
+			`holy cow you subscribed. ${action} - is the action, ${observerFunction} - observerFunction `
+		);
 	};
 
 	return {
+		get stuff() {
+			return stuff;
+		},
+		get observers() {
+			return observers;
+		},
 		get _id() {
 			return _id;
 		},

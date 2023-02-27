@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import './style.css';
 
 import Collection from './extending_collections';
@@ -31,13 +32,14 @@ tobyDictionary.add({
 const test = Collection();
 
 test.add({ test: 'test', animal: 'cougar' });
+test.add({ test: 'test', animal: 'lion' });
 
-test.subscribe('add', (item, collection) => {
-	console.log('item', item, 'collection', collection);
+test.subscribe('add', (item) => {
+	console.log('ITEM ---', item);
 });
 
-console.log(test.stuff); // undefined
+console.log(test.stuff); // now lists the two objects
 console.log(test.thing); // undefined
 console.log(test.title); // Default Collection
 
-console.log(test.observers); // undefined
+console.log(test._id); // lists id
