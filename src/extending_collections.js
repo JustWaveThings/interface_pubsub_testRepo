@@ -1,3 +1,4 @@
+/* eslint-disable no-prototype-builtins */
 /* eslint-disable no-underscore-dangle */
 import v4 from 'uuid';
 
@@ -36,7 +37,7 @@ const Collection = (
 	};
 
 	const subscribe = (action, observerFunction) => {
-		if (!observers.prototype.hasOwnProperty.call(action)) {
+		if (!observers.hasOwnProperty(action)) {
 			observers[action] = [];
 		}
 		observers[action].push(observerFunction);
