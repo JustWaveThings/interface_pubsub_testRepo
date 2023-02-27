@@ -2,7 +2,7 @@ import './style.css';
 
 import Collection from './extending_collections';
 
-const tobyDictionary = Collection("Toby's Dictionary");
+/* const tobyDictionary = Collection("Toby's Dictionary");
 
 tobyDictionary.add({
 	term: 'Cabbage',
@@ -26,4 +26,11 @@ tobyDictionary.add({
 tobyDictionary.add({
 	term: 'Resident',
 	definition: 'adj. Unable to leave.',
-});
+}); */
+
+const test = Collection('Test');
+
+console.log(test.add({ test: 'test' }));
+
+console.log(test.stuff);
+console.log(tobyDictionary);
