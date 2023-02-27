@@ -23,7 +23,7 @@ const Collection = (title = 'Default Collection', _id = uuidv4()) => {
 		}
 		observers[action].push(observerFunction);
 		console.log(
-			`holy cow you subscribed. ${action} - is the action, ${observerFunction} - observerFunction `
+			`holy cow you subscribed. ${action} - is the action `
 		);
 	};
 

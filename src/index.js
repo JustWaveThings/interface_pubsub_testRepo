@@ -38,8 +38,18 @@ test.subscribe('add', (item) => {
 	console.log('ITEM ---', item);
 });
 
-console.log(test.stuff); // now lists the two objects
-console.log(test.thing); // undefined
+// note that ^ did not print to console.
+
+console.log(test.stuff); // now lists the two objects in an array -- both have the collection id. I'd want to figure out how to give them their own secondary id.
+
+console.log(test.thing); // still undefined  - just not reachable
 console.log(test.title); // Default Collection
 
 console.log(test._id); // lists id
+console.log(test.observers); // object with array of 'add' and the function
+
+console.log(test.observers.title); // undefined
+
+console.log(test.observers.add); // just the add function
+
+console.log(test.observers.add[0]); // Literally just the add function printed out
