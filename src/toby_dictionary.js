@@ -1,7 +1,11 @@
-/* eslint-disable import/extensions */
 import Collection from './extending_collections';
 
 const tobyDictionary = Collection("Toby's Dictionary");
+
+export const logInUpperCase = ({ data: item }) =>
+	console.log(`**${item.term.toUpperCase()}**: ${item.definition}*`);
+
+tobyDictionary.subscribe('add', logInUpperCase);
 
 tobyDictionary.add({
 	term: 'Cabbage',

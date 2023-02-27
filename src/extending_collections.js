@@ -44,11 +44,6 @@ const Collection = (title = 'Default Collection', _id = uuidv4()) => {
 		);
 	};
 
-	const logInUpperCase = (item) =>
-		console.log(
-			`**${item.term.toUpperCase()}**: ${item.definition}*`
-		);
-
 	return {
 		get _id() {
 			return _id;
@@ -63,7 +58,6 @@ const Collection = (title = 'Default Collection', _id = uuidv4()) => {
 		update,
 		subscribe,
 		unsubscribe,
-		logInUpperCase,
 	};
 };
 
