@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import v4 from 'uuid';
 
 const createUUID = v4();
@@ -7,9 +8,9 @@ const Collection = (
 	_id = createUUID()
 ) => {
 	let stuff = [];
-	let observers = {};
+	const observers = {};
 
-	const add = (item, _id = createUUID()) => {
+	const add = (item) => {
 		const thing = Object.freeze({ _id, data: item });
 		stuff = [...stuff, thing];
 		observers.add?.forEach((observerFunc) =>
@@ -35,7 +36,7 @@ const Collection = (
 	};
 
 	const subscribe = (action, observerFunction) => {
-		if (!observers.hasOwnProperty(action)) {
+		if (!observers.prototype.hasOwnProperty.call(action)) {
 			observers[action] = [];
 		}
 		observers[action].push(observerFunction);
